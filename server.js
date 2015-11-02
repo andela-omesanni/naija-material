@@ -22,8 +22,6 @@ var cookieParser = require('cookie-parser'),
   app.use(function (req, res, next) {
     // log each request in development environment
     if(env !== 'production') console.log(t().format('HH:MM'), req.method, req.url, req.socket.bytesRead); 
-    // tell the client what firebase to use
-    //res.cookie('rootRef', rootRef.toString());
 
     next();
   });

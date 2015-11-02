@@ -1,7 +1,54 @@
-md-content.md-default-theme.no-bg(layout="column" layout-fill)
-  md-toolbar#home-toolbar
+include ./partials/header
+md-whiteframe.md-whiteframe-2dp.categories-container.spacer.large(flex-offset="10"  layout="column" )
+  md-toolbar.md-primary
     .md-toolbar-tools
-      span.title My App
-      span(flex layout="row" layout-align="end center" ng-if="currentUser")
-        md-button(ng-click="showMenu($event)" aria-label="Show Bottom Sheet")
-          i.fa.fa-ellipsis-v
+      h3 FORUMS
+      div.icons-container(flex layout="row" layout-align="end center")
+        md-input-container.md-accent
+          input(type="text")
+        md-button.md-icon-button
+          i.mdi.mdi-filter-outline.toolbar-icon-size
+  .md-padding(layout="row" layout-wrap layout-align="center end" )
+    md-content.md-padding(flex="30")
+      md-card.category-cards
+        .img-wrapper(layout="column" layout-align="center center" layout-padding)
+          img.md-card-image(src='/img/movie.png', alt='movies')
+        |       
+        md-card-content
+          h2.md-title Entertainment
+        |       
+        .md-actions(layout='row', layout-align='end center')
+          
+    
+    md-content.md-padding(flex="30")
+      md-card.category-cards
+        .img-wrapper(layout="column" layout-align="center center" layout-padding)
+          img.md-card-image(src='/img/science.png', alt='science')
+        |       
+        md-card-content
+          h2.md-title Science & Technology
+        |       
+        .md-actions(layout='row', layout-align='end center')
+          
+
+    md-content.md-padding(flex="30")
+      md-card.category-cards
+        .img-wrapper(layout="column" layout-align="center center" layout-padding)
+          img.md-card-image(src='/img/arts.png', alt='arts')
+        |       
+        md-card-content
+          h2.md-title Arts
+        |       
+        .md-actions(layout='row', layout-align='end center')
+          
+
+    md-content.md-padding(flex="30")
+      md-card.category-cards
+        .img-wrapper(layout="column" layout-align="center center" layout-padding)
+          img.md-card-image(src='/img/general.png', alt='general')
+        |       
+        md-card-content
+          h2.md-title General
+        |       
+        .md-actions(layout='row', layout-align='end center')
+          

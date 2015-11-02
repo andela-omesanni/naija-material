@@ -3,5 +3,10 @@ html(lang="en" ng-app="NaijaMaterial")
   head
     title NaijaMaterial
     include shared/head
-  body(layout="row" layout-fill)
-    md-content.md-default-theme.no-bg(layout="row" layout-fill ui-view)
+  body(layout="column" layout-fill)
+    div( ui-view)
+
+    include shared/footer
+
+
+    

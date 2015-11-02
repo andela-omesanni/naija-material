@@ -43,12 +43,12 @@ NaijaMaterial.config(['$stateProvider','$locationProvider',
   
   $stateProvider
     .state('login', {
-      url: '/',
+      url: '/login',
       templateUrl: 'views/login.html',
       controller: 'LoginCtrl'
     })
     .state('default', {
-      url: '/home',
+      url: '/',
       templateUrl: 'views/home.html',
       controller: 'HomeCtrl'
     });

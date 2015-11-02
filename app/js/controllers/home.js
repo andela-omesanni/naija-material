@@ -1,7 +1,7 @@
 angular.module('naijamaterial.controllers')
 .controller('HomeCtrl',
-  ['$scope', '$state', '$mdBottomSheet', 'Authentication',
-    function($scope, $state, $mdBottomSheet, Authentication) {
+  ['$scope', '$state', '$mdBottomSheet',
+    function($scope, $state, $mdBottomSheet) {
 
       $scope.showMenu = function($event) {
         $mdBottomSheet.show({
@@ -14,8 +14,8 @@ angular.module('naijamaterial.controllers')
       };
 
       $scope.logout = function() {
-        Authentication.logout();
-        $state.go('login');
+        // Authentication.logout();
+        // $state.go('login');
       };
     }
  ]);

@@ -14,7 +14,8 @@
     "angular-ui-router": "~0.2.11",
     "underscore": "latest",
     "jquery": "~2.1.1",
-    "angular-elastic": "~2.4.2"
+    "angular-elastic": "~2.4.2",
+    "mdi": "~1.2.65"
   },
   "resolutions": {
     "angular": "1.4.7",
