@@ -1,21 +1,17 @@
 angular.module('naijamaterial.controllers')
-.controller('HomeCtrl',
-  ['$scope', '$state', '$mdBottomSheet',
-    function($scope, $state, $mdBottomSheet) {
+  .controller('HomeCtrl', ['$scope',
+    function($scope) {
 
-      $scope.showMenu = function($event) {
-        $mdBottomSheet.show({
-          templateUrl: 'views/menu.html',
-          controller: 'MenuCtrl',
-          targetEvent: $event
-        }).then(function(clickedItem) {
-          $state.go(clickedItem.state);
-        });
-      };
+      $scope.categories = [
+        {name: 'Entertainment', icon: 'movie.png'},
+        {name: 'Science & Technology', icon: 'science.png'},
+        {name: 'Arts', icon: 'arts.png'}, 
+        {name: 'General', icon: 'general.png'}
+      ];
 
       $scope.logout = function() {
         // Authentication.logout();
         // $state.go('login');
       };
     }
- ]);
+]);

@@ -1,0 +1,20 @@
+md-sidenav#home-sideNav.md-sidenav-left.md-whiteframe-z2(md-component-id='left' side-nav flex)
+  md-toolbar.md-tall.md-ranger-theme.md-hue-2(layout="column" layout-align="start")
+    .img-responsive
+      img(src='/img/default-avatar.png' alt='profile-picture')
+    small.md-toolbar-tools.no-padding Pete Jenkins
+    small.md-toolbar-tools.no-padding pete.jenkins@gmail.com
+  |                         
+  md-content.md-padding
+    md-list
+      md-list-item(ng-repeat='item in menuLinks' md-ink-ripple class="md-clickable" aria-label="menu-item")
+        a(href="{{item.href}}" flex)
+          md-item-content                             
+            div(layout='row', layout-align='start center')
+              .inset.dark-grey
+                i.mdi.toolbar-icon-size(class="{{item.icon}}")
+              |             
+              .inset
+              | {{item.title}}
+          |                             
+          md-divider(ng-if='!$last')

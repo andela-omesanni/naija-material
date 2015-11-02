@@ -20,20 +20,28 @@
 @ptext: Palatino, Times;
 
 
-html {
-  height:100%
+html, body {
+  height: 100%;
+  background-color: #FAFAFA;
 }
 
 body {
   font-family: "Roboto", 'Helvetica Neue', Helvetica, Arial, sans;
   font-size: 12pt;
   color: #333;
-  height: 100%;
-  background-color: #FAFAFA;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
 }
 
 .toolbar-icon-size {
   font-size: 1.5em;
+}
+
+.dark-grey {
+  color: #737373;
 }
 
 #header-toolbar {
@@ -49,6 +57,38 @@ body {
   }
   &.medium {
     margin-top: 1.0em;
+  }
+}
+
+.no-bg {
+  background-color: transparent;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.img-responsive {
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+}
+
+#home-sideNav {
+  md-toolbar {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    padding: 10px;
+    small {
+      font-size: small;
+      &:nth-of-type(2) {
+        color: rgba(255,255,255, 0.5);
+      }
+    }
+  }
+  md-list-item {
+    padding: 10px 16px;
   }
 }
 
@@ -76,6 +116,16 @@ body {
     }
     md-card-content {
       color: #484848;
+      padding: 10px;
+      font-size: 17px;
+      text-align: center;
+      a {
+        text-decoration: none;
+        color: #484848;
+        &:hover {
+          color: lighten(#484848, 20%);
+        }
+      }
     }
   }
 }

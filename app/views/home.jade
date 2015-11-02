@@ -1,54 +1,22 @@
 include ./partials/header
-md-whiteframe.md-whiteframe-2dp.categories-container.spacer.large(flex-offset="10"  layout="column" )
-  md-toolbar.md-primary
-    .md-toolbar-tools
-      h3 FORUMS
-      div.icons-container(flex layout="row" layout-align="end center")
-        md-input-container.md-accent
-          input(type="text")
-        md-button.md-icon-button
-          i.mdi.mdi-filter-outline.toolbar-icon-size
-  .md-padding(layout="row" layout-wrap layout-align="center end" )
-    md-content.md-padding(flex="30")
-      md-card.category-cards
-        .img-wrapper(layout="column" layout-align="center center" layout-padding)
-          img.md-card-image(src='/img/movie.png', alt='movies')
-        |       
-        md-card-content
-          h2.md-title Entertainment
-        |       
-        .md-actions(layout='row', layout-align='end center')
-          
-    
-    md-content.md-padding(flex="30")
-      md-card.category-cards
-        .img-wrapper(layout="column" layout-align="center center" layout-padding)
-          img.md-card-image(src='/img/science.png', alt='science')
-        |       
-        md-card-content
-          h2.md-title Science & Technology
-        |       
-        .md-actions(layout='row', layout-align='end center')
-          
+section(layout="row")
+  include ./partials/sideNav
 
-    md-content.md-padding(flex="30")
-      md-card.category-cards
-        .img-wrapper(layout="column" layout-align="center center" layout-padding)
-          img.md-card-image(src='/img/arts.png', alt='arts')
-        |       
-        md-card-content
-          h2.md-title Arts
-        |       
-        .md-actions(layout='row', layout-align='end center')
+  md-whiteframe.md-whiteframe-2dp.categories-container.spacer.large(flex-offset="10" layout="column" )
+    md-toolbar.md-primary
+      .md-toolbar-tools
+        h3 FORUMS
+        div.icons-container(flex layout="row" layout-align="end center")
+          md-input-container.md-accent
+            input(type="text" aria-label="filter input")
+          md-button.md-icon-button(aria-label="filter icon")
+            i.mdi.mdi-filter-outline.toolbar-icon-size
+    .md-padding(layout="row" layout-wrap layout-align="center end" )
+      md-content.md-padding.no-bg(flex="30" ng-repeat="category in categories")
+        md-card.category-cards
+          .img-wrapper(layout="column" layout-align="center center" layout-padding)
+            img.md-card-image(src='/img/{{category.icon}}')   
+          md-card-content
+            a(ui-sref="forum-category({category: category.name})") {{category.name}}
           
-
-    md-content.md-padding(flex="30")
-      md-card.category-cards
-        .img-wrapper(layout="column" layout-align="center center" layout-padding)
-          img.md-card-image(src='/img/general.png', alt='general')
-        |       
-        md-card-content
-          h2.md-title General
-        |       
-        .md-actions(layout='row', layout-align='end center')
-          
+            

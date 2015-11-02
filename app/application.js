@@ -13,11 +13,13 @@ require('./js/services/toast.js');
 require('./js/filters/reverse.js');
 
 /* load directives */
+require('./js/directives/sideNav.js');
 
 /* load controllers */
 require('./js/controllers/home.js');
 require('./js/controllers/login.js');
 require('./js/controllers/menu.js');
+require('./js/controllers/forumCategory.js');
 
 window.NaijaMaterial = angular.module("NaijaMaterial", [
   'ui.router',
@@ -37,9 +39,22 @@ NaijaMaterial.run(['$rootScope', '$state', 'Toast',
 ]);
 
 /* application routes */
-NaijaMaterial.config(['$stateProvider','$locationProvider',
- function($stateProvider, $locationProvider) {
+NaijaMaterial.config(['$stateProvider','$locationProvider', '$mdThemingProvider',
+ function($stateProvider, $locationProvider, $mdThemingProvider) {
   $locationProvider.html5Mode(true);
+
+  var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {
+    'contrastDefaultColor': 'light',
+    'contrastDarkColors': ['50'],
+    '50': 'ffffff'
+  });
+
+  $mdThemingProvider.definePalette('customBlue', customBlueMap);
+  $mdThemingProvider.theme('ranger')
+    .primaryPalette('customBlue', {
+      'default': '500',
+      'hue-1': '50'
+    })
   
   $stateProvider
     .state('login', {
@@ -51,5 +66,10 @@ NaijaMaterial.config(['$stateProvider','$locationProvider',
       url: '/',
       templateUrl: 'views/home.html',
       controller: 'HomeCtrl'
+    })
+    .state('forum-category', {
+      url: '/forum/category/:category',
+      templateUrl: 'views/forumCategory.html',
+      controller: 'ForumCategoryCtrl'
     });
 }]);
