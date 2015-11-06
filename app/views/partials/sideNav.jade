@@ -7,7 +7,7 @@ md-sidenav#home-sideNav.md-sidenav-left.md-whiteframe-z2(md-component-id='left' 
   |                         
   md-content.md-padding
     md-list
-      md-list-item(ng-repeat='item in menuLinks' md-ink-ripple class="md-clickable" aria-label="menu-item")
+      md-list-item(ng-repeat='item in menuLinks' md-ink-ripple aria-label="menu-item")
         a(href="{{item.href}}" flex)
           md-item-content                             
             div(layout='row', layout-align='start center')
