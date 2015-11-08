@@ -1,0 +1,27 @@
+include ./partials/header
+md-content.md-default-theme.md-padding(layout="column" flex)
+  md-data-table-toolbar(layout layout-align='space between')
+    h2.md-title {{title}}
+    md-button.md-fab(ng-click='newTopic($event)' style="font-size: 20px;") 
+      i.mdi.mdi-plus
+      md-tooltip Create New Topic
+  md-data-table-container
+    table(md-data-table)
+      thead(md-order="query.topic")
+        tr
+          th(name='Topic')
+          th(name='Posted By')
+          th(name='Latest Reply')
+          th(name='Comment')
+      tbody
+        tr(ng-repeat="subject in thread | orderBy:'query.topic' | limitTo: query.limit: (query.page - 1) * query.limit ")
+          td.md-title
+            a(href="#") {{ subject.topic }}
+            i.time(am-time-ago='subject.time')
+          td
+            a(href="#") {{ subject.posted_by }}
+          td
+            a(href="#") {{ subject.latest_reply }}
+          td
+            span.p-comment-count.heat2 {{ subject.comment }}
+  md-data-table-pagination(md-limit="query.limit" md-page="query.page" md-total="{{thread.length}}" md-trigger="onPaginationChange")

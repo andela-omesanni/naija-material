@@ -1,0 +1,13 @@
+md-dialog(style="min-width: 50%;")
+  md-toolbar
+    .md-toolbar-tools
+      h2 Create New Topic
+  md-dialog-content.md-padding(layout="column" flex)
+    md-input-container
+      label Title
+      input(ng-model="topic.title" type="text" required)
+    md-input-container
+      textarea(ui-tinymce ng-model='topic.description' required)
+  .md-actions(layout="row" layout-align="end")
+    md-button.md-raised.md-accent(ng-click="cancel()") Cancel
+    md-button.md-raised.md-primary(ng-click="create()") Create
