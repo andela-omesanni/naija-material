@@ -1,4 +1,4 @@
-div(layout="row" layout-align="center center" layout-fill flex)
+div#login-container(layout="row" layout-align="center center" layout-fill flex)
   md-whiteframe.md-whiteframe-2dp(layout="column" flex="30")
     .card-header MATERIAL
     .md-padding
@@ -10,3 +10,5 @@ div(layout="row" layout-align="center center" layout-fill flex)
         input(type="password" ng-model="credentials.password")
       div(layout)
         md-button.md-primary.md-raised.auth-btn(flex) Login
+      .spacer.large
+        a(href="#") Create an account

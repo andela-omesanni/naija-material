@@ -14,6 +14,7 @@ require('./js/filters/reverse.js');
 
 /* load directives */
 require('./js/directives/sideNav.js');
+require('./js/directives/uiViewStyle.js')
 
 /* load controllers */
 require('./js/controllers/home.js');
