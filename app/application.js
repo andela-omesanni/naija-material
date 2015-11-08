@@ -20,6 +20,7 @@ require('./js/controllers/home.js');
 require('./js/controllers/login.js');
 require('./js/controllers/menu.js');
 require('./js/controllers/forumCategory.js');
+require('./js/controllers/thread.js');
 
 window.NaijaMaterial = angular.module("NaijaMaterial", [
   'ui.router',
@@ -28,7 +29,10 @@ window.NaijaMaterial = angular.module("NaijaMaterial", [
   'naijamaterial.filters',
   'naijamaterial.services',
   'ngAnimate',
-  'ngMaterial'
+  'ngMaterial',
+  'md.data.table',
+  'angularMoment',
+  'ui.tinymce'
 ]);
 
 NaijaMaterial.run(['$rootScope', '$state', 'Toast',
@@ -55,7 +59,7 @@ NaijaMaterial.config(['$stateProvider','$locationProvider', '$mdThemingProvider'
       'default': '500',
       'hue-1': '50'
     })
-  
+
   $stateProvider
     .state('login', {
       url: '/login',
@@ -71,5 +75,10 @@ NaijaMaterial.config(['$stateProvider','$locationProvider', '$mdThemingProvider'
       url: '/forum/category/:category',
       templateUrl: 'views/forumCategory.html',
       controller: 'ForumCategoryCtrl'
+    })
+    .state('thread', {
+      url: '/{subCategory}',
+      templateUrl: 'views/thread.html',
+      controller: 'ThreadCtrl'
     });
 }]);

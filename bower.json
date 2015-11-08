@@ -15,7 +15,10 @@
     "underscore": "latest",
     "jquery": "~2.1.1",
     "angular-elastic": "~2.4.2",
-    "mdi": "~1.2.65"
+    "mdi": "~1.2.65",
+    "angular-material-data-table": "~0.8.14",
+    "angular-moment": "~0.10.3",
+    "angular-ui-tinymce": "~0.0.10"
   },
   "resolutions": {
     "angular": "1.4.7",
