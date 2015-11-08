@@ -1,3 +1,12 @@
-header
-section.main-page-container
-	a.st-buttons.red#login-button(ng-click="login()") Login/SignUp
+div(layout="row" layout-align="center center" layout-fill flex)
+  md-whiteframe.md-whiteframe-2dp(layout="column" flex="30")
+    .card-header MATERIAL
+    .md-padding
+      md-input-container.md-block
+        label Email
+        input(type="email" ng-model="credentials.email")
+      md-input-container.md-block
+        label Password
+        input(type="password" ng-model="credentials.password")
+      div(layout)
+        md-button.md-primary.md-raised.auth-btn(flex) Login
